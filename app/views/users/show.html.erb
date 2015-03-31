@@ -1,0 +1,19 @@
+<% if flash[:notice] %>
+<div class="alert alert-success text-center"><%= flash[:notice] %>
+</div>
+<% end %>
+<div class="page-header">
+  <%= link_to "Edit", edit_user_path(@user), class: "btn btn-info pull-right" %>
+  <h1><%= "#{@user.first_name} #{@user.last_name}"%></h1>
+</div>
+<dl class="dl-horizontal">
+  <dt>First Name:</dt>
+  <dd><%= @user.first_name %></dd>
+
+  <dt>Last Name:</dt>
+  <dd><%= @user.last_name %></dd>
+
+  <dt>Email:</dt>
+  <dd><%= mail_to @user.email %></dd>
+
+</dl>

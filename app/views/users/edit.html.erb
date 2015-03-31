@@ -1,0 +1,14 @@
+<% if flash[:notice] %>
+<div class="alert alert-success text-center"><%= flash[:notice] %></div>
+<% end %>
+<h1>Editing user</h1>
+
+<%= render 'form' %>
+
+<div class="form-group">
+  <div class="col-sm-offset-2 col-sm-4">
+    <div class="well">
+      <%= link_to "Delete User", @user, method: :delete, data: {confirm: "are you sure?"}, class: "btn btn-danger center-block" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="col-sm-offset-3">
+  <div class="col-sm-7">
+
+  <div class="well">
+    <h2>Sign into Welp!</h2>
+
+    <% if @sign_in_error %>
+    <div class="alert alert-danger">
+    <p>
+      <%= @sign_in_error %>
+    </p>
+  </div>
+    <% end %>
+
+    <%= form_tag signin_path do %>
+    <%= label_tag :email, nil, class:"control-label" %>
+    <%= email_field_tag :email, "", class:"form-control" %><br>
+
+    <%= label_tag :password, nil, class:"control-label" %>
+    <%= text_field_tag :password, nil, class:"form-control" %><br>
+
+    <%= submit_tag "Sign In", class:"btn btn-primary" %>
+    <% end %>
+    </div>
+  </div>
+</div>
