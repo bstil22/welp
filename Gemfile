@@ -30,7 +30,10 @@ gem 'sass-rails', '>= 3.2'
 group :production do
  gem "rails_12factor"
 end
-
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end
+gem 'capybara'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
