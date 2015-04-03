@@ -10,7 +10,7 @@ class UsersController < ApplicationController
   def update
     @user= User.find(params[:id])
     if @user.update(user_params)
-      flash[:notice] = "User was successfully updated."
+      flash[:notice] = "Account successfully updated."
       redirect_to user_path(@user)
     else
       render :edit
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    flash[:notice] = 'User was successfully destroyed.'
+    flash[:notice] = 'Your account was successfully destroyed'
     redirect_to users_path
   end
 

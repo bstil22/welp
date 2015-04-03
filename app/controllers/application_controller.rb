@@ -6,6 +6,13 @@ class ApplicationController < ActionController::Base
   def current_user
     User.find_by(id: session[:user_id])
   end
+  def authenticate_visitor!
+    if current_user
+      puts current_user
+    else
+      redirect_to signin_path
+  end
+end
 
   helper_method :current_user
 end

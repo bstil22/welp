@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'sass-rails', '>= 3.2'
+gem 'geocoder'
 
 group :production do
  gem "rails_12factor"
@@ -34,6 +35,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
 end
 gem 'capybara'
+gem 'yelp', require: 'yelp'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
