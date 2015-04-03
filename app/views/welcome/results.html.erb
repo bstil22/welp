@@ -2,3 +2,4 @@
 <% @restaurant.each do |x|%>
   <%= link_to "#{x.name}", restaurant_path(x) %></p>
 <%end%>
+<%= will_paginate @restaurant %>

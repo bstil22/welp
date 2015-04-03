@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
   end
   def results
     @location = [session[:latitude], session[:longitude]]
-    @restaurant = Restaurant.near([session[:latitude], session[:longitude]], 0.25)
+    @restaurant = Restaurant.near([session[:latitude], session[:longitude]], 0.25).paginate(:page => params[:page], :per_page => 10)
   end
   def search
     puts params
