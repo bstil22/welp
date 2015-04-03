@@ -1,9 +1,11 @@
 <%= form_for @user,html:{class:"form-horizontal"}, url: signup_path do |f| %>
 
-    <div class="well col-md-6 col-md-offset-3">
-        <div class="text-center">
+<div class="col-sm-offset-3">
+<div class="col-sm-8">
+    <div class="well">
+      <div class="text-center">
         <h1>Sign Up for Welp!</h1>
-        </div>
+      </div>
       <% if @user.errors.present? %>
       <div class= "alert alert-danger">
         <% @user.errors.full_messages.each do |message| %>
@@ -12,34 +14,36 @@
       </div>
       <% end %>
 
-    <div id="padding-form">
-      <div class="form-group">
-        <%= f.label :first_name, class: "control-label" %>
+      <div id="padding-form">
+        <div class="form-group">
+          <%= f.label :first_name, class: "control-label" %>
+          <div class='col-md-3'></div>
           <%= f.text_field :first_name, class:"form-control" %>
+        </div>
       </div>
 
       <div class="form-group">
         <%= f.label :last_name, class: "control-label" %>
-          <%= f.text_field :last_name, class: "form-control" %>
+        <%= f.text_field :last_name, class: "form-control" %>
       </div>
 
       <div class="form-group">
         <%= f.label :email, class: "control-label" %>
-          <%= f.email_field :email, class: "form-control" %>
+        <%= f.email_field :email, class: "form-control" %>
       </div>
 
       <div class="form-group">
         <%= f.label :password, class: " control-label" %>
-          <%= f.password_field :password, class: "form-control" %>
+        <%= f.password_field :password, class: "form-control" %>
       </div>
 
       <div class="form-group">
         <%= f.label :password_confirmation, class: "control-label" %>
-          <%= f.password_field :password_confirmation, class: "form-control" %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
       </div>
 
       <div class="form-group ">
-          <%= f.submit 'Sign Up', class:"btn btn-info" %>
+        <%= f.submit 'Sign Up', class:"btn btn-info" %>
       </div>
     </div>
   </div>

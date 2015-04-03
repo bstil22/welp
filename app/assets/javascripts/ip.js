@@ -27,7 +27,7 @@ function geoFindMe() {
     output.innerHTML = "Unable to retrieve your location";
   };
 
-  output.innerHTML = "<p>Locating…</p>";
+  output.innerHTML = "<div class='loader'><p>Locating…</p></div>";
 
   navigator.geolocation.getCurrentPosition(success, error);
 }

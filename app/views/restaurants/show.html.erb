@@ -1,7 +1,7 @@
 <h1><%= @restaurant.name.titlecase %></h1>
 
 <h4><%= @restaurant.address %></h4>
-
+<h4>Rating:  <%= @restaurant.reviews.collect(&:rating).sum.to_f/@restaurant.reviews.length if @restaurant.reviews.length > 0 %></h4>
 <%= link_to "write a review", new_restaurant_review_path(@restaurant) %>
 
 <% @restaurant.reviews.each do |review| %>
