@@ -11,4 +11,16 @@ class WelcomeController < ApplicationController
     @location = [session[:latitude], session[:longitude]]
     @restaurant = Restaurant.near([session[:latitude], session[:longitude]], 0.25)
   end
+  def search
+    puts params
+    if params[:search].present?
+      @results = Restaurant.search(params[:query], autocomplete: true, fields: [{name: :text_start}], page: params[:page], per_page: 10)
+    else
+      @results = Restaurant.all
+    end
+  end
+  
+  def autocomplete
+    render json: City.search(params[:query], fields: [{name: :text_start}], limit: 10).map(&:name)
+  end
 end

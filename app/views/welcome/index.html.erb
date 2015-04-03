@@ -2,5 +2,8 @@
 <div id="out"></div>
 <h1>Welcome to Welp, <%= @user.first_name.titlecase %>. </h1>
 <%end%>
-
+<%= form_tag(search_path, :method => "get", id: "search-form") do %>
+  <%= text_field_tag :search, params[:query], placeholder: "Search Restaurants" %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
 <button type="button" id='target'>Write A Review</button>

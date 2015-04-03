@@ -1,0 +1,7 @@
+
+
+<% @results.each do |result| %>
+<p><%= link_to "#{result.name}", restaurant_path(result) %></p>
+<%end%>
+
+<%= will_paginate @results %>

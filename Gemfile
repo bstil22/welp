@@ -36,6 +36,8 @@ group :development, :test do
 end
 gem 'capybara'
 gem 'yelp', require: 'yelp'
+gem 'searchkick'
+gem 'will_paginate', '~> 3.0.6'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
