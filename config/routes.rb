@@ -14,6 +14,5 @@ Rails.application.routes.draw do
   get '/location' => 'welcome#location'
   get '/results' => 'welcome#results'
   get '/search' => 'welcome#search'
-  get '/search' => 'welcome#autocomplete'
 end
   

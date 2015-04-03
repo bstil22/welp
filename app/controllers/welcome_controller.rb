@@ -14,13 +14,10 @@ class WelcomeController < ApplicationController
   def search
     puts params
     if params[:search].present?
-      @results = Restaurant.search(params[:search], autocomplete: true, fields: [{name: :text_start}], page: params[:page], per_page: 10)
+      @results = Restaurant.search(params[:search], fields: [:name], page: params[:page], per_page: 10)
     else
       @results = Restaurant.all
     end
   end
 
-  def autocomplete
-    render json: City.search(params[:search], fields: [{name: :text_start}], limit: 10).map(&:name)
-  end
 end
