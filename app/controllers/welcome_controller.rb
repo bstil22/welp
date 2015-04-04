@@ -18,7 +18,8 @@ class WelcomeController < ApplicationController
   end
   def search
     if params[:search].present?
-      @results = Restaurant.search(params[:search], fields: [:name]).paginate(:page => params[:page], :per_page => 10)
+      @results = Restaurant.search(params[:search], fields: [:name])
+      @results.paginate(:page => params[:page], :per_page => 10)
     else
       @results = Restaurant.all.paginate(:page => params[:page], :per_page => 10)
     end
