@@ -1,12 +1,14 @@
-
-$(document).on('page:change', function () {
+$( document ).ready(function() {
   geoFindMe();
+  window.setInterval(function(){
+    geoFindMe();
+  }, 10000);
+});
+function geoFindMe() {
   $( "#target" ).click(function() {
+    console.log("im called")
     window.location.href = "/results";
   });
-});
-
-function geoFindMe() {
   var output = document.getElementById("out");
 
   if (!navigator.geolocation){
@@ -27,7 +29,7 @@ function geoFindMe() {
     output.innerHTML = "Unable to retrieve your location";
   };
 
-  output.innerHTML = "<div class='loader'><p>Locating…</p></div>";
+  output.innerHTML = "<p>Locating…</p>";
 
   navigator.geolocation.getCurrentPosition(success, error);
 }

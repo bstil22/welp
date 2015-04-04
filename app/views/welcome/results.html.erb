@@ -1,5 +1,5 @@
 <h3>Your availible options to review</h3>
 <% @restaurant.each do |x|%>
-  <%= link_to "#{x.name}", restaurant_path(x) %></p>
+  <p><%= link_to "#{x.name}", restaurant_path(x) %></p><p><%= x.distance_from([session[:latitude], session[:longitude]]).round(2) %> miles away.</p>
 <%end%>
 <%= will_paginate @restaurant %>
