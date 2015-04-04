@@ -2,4 +2,4 @@
 <% @restaurant.each do |x|%>
   <p><%= link_to "#{x.name}", restaurant_path(x) %></p><p><%= x.distance_from([session[:latitude], session[:longitude]]).round(2) %> miles away.</p>
 <%end%>
-<%= will_paginate @restaurant %>
+<center><%= will_paginate @restaurant %></center>
