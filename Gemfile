@@ -37,6 +37,7 @@ gem 'capybara'
 gem 'yelp', require: 'yelp'
 gem 'searchkick'
 gem 'will_paginate', '~> 3.0.6'
+gem 'rest-client', '~> 1.8.0'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
