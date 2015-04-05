@@ -12,8 +12,9 @@ class ApplicationController < ActionController::Base
       puts current_user
     else
       redirect_to signin_path
+    end
   end
-end
+
 
   helper_method :current_user
 end
