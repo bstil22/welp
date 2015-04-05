@@ -9,6 +9,10 @@ function geoFindMe() {
     console.log("im called")
     window.location.href = "/results";
   });
+  $(".submit-btn").click(function(event) {
+  event.preventDefault();
+  $("user-form").submit();
+});
   var output = document.getElementById("out");
 
   if (!navigator.geolocation){

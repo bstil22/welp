@@ -1,14 +1,59 @@
-<% if flash[:notice] %>
-<div class="alert alert-success text-center"><%= flash[:notice] %></div>
-<% end %>
-<h1>Editing user</h1>
 
-<%= render 'form' %>
+<h1>Edit Account Information</h1>
 
-<div class="form-group">
-  <div class="col-sm-offset-2 col-sm-4">
-    <div class="well">
-      <%= link_to "Delete User", @user, method: :delete, data: {confirm: "are you sure?"}, class: "btn btn-danger center-block" %>
-    </div>
+<%= form_for(@user, html:{class:"form-horizontal", id: "user-form"}) do |f| %>
+<% if @user.errors.any? %>
+<div id="error_explanation">
+  <div class= "alert alert-danger col-md-offset-2">
+    <h3><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h3>
+
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
   </div>
 </div>
+<% end %>
+
+  <div class="form-group">
+    <%= f.label :first_name, class: "col-md-2 control-label" %>
+    <div class="col-md-4">
+      <%= f.text_field :first_name, class:"form-control" %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :last_name, class: "col-md-2 control-label" %>
+          <div class="col-md-4">
+            <%= f.text_field :last_name, class: "form-control" %>
+          </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email, class: "col-md-2 control-label" %>
+    <div class="col-md-4">
+      <%= f.email_field :email, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :password, class: "col-md-2 control-label" %>
+    <div class="col-md-4">
+      <%= f.password_field :password, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :password_confirmation, class: "col-md-2 control-label" %>
+    <div class="col-md-4">
+      <%= f.password_field :password_confirmation, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+   <div class="col-sm-offset-2 col-sm-4">
+      <%= link_to "Update", user_path(@user), class: "btn btn--black btn--full" %>
+      <%= link_to "Cancel", user_path(@user), class: "btn btn--black btn--full" %>
+      <%= link_to "Delete Account", @user, method: :delete, data: {confirm: "are you sure?"}, class: "btn btn--black btn--full" %>
+  </div>
+  </div>
+
+<% end %>

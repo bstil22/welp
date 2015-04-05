@@ -1,10 +1,8 @@
-<% if flash[:notice] %>
-<div class="alert alert-success text-center"><%= flash[:notice] %>
-</div>
-<% end %>
+<div class="container">
+  <div class="row-fluid">
+
 <div class="page-header">
-  <%= link_to "Edit", edit_user_path(@user), class: "btn btn-info pull-right" %>
-  <h1><%= "#{@user.first_name} #{@user.last_name}"%></h1>
+<%= link_to "Edit Account", edit_user_path(@user), class: "btn pull-right" %><h1><%= "#{@user.first_name} #{@user.last_name}"%></h1>
 </div>
 <dl class="dl-horizontal">
   <dt>First Name:</dt>
@@ -16,4 +14,9 @@
   <dt>Email:</dt>
   <dd><%= mail_to @user.email %></dd>
 
+  <dt>Member since: </dt>
+  <dd><%= @user.created_at.strftime("%B %d, %Y") %></dd>
+
 </dl>
+</div>
+</div>

@@ -4,7 +4,7 @@ class ReviewsController < ApplicationController
       if Restaurant.near([session[:latitude], session[:longitude]], 0.25).include?(@restaurant)
         puts "nice you can review this"
       else
-      redirect_to root_path, notice: "you are not within the required distance"
+      redirect_to root_path, alert: "You are currently not within the required distance to review."
     end
   end
   def new

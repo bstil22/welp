@@ -1,9 +1,16 @@
-<% @results.each do |result| %>
-<p><%= link_to "#{result.name}", restaurant_path(result) %></p>
-  <% if result.latitude != nil %>
-    <p><%= result.distance_from([session[:latitude], session[:longitude]]).round(2) %> miles away.</p>
-  <%end%>
-<%end%>
-<div class="apple_pagination">
-<center><%= will_paginate @results %></center>
+<div class="container">
+  <div class="row-fluid">
+    <% @results.each do |result| %>
+    <span id='inline'>
+    <h4><%= link_to "#{result.name.titlecase}", restaurant_path(result) %>&nbsp;</h4>
+    <% if result.latitude != nil %>
+    <h6> <%= result.distance_from([session[:latitude], session[:longitude]]).round(2) %> miles away.</h6>
+    </span>
+    </br>
+    <%end%>
+    <%end%>
+<div class="digg_pagination">
+  <center><%= will_paginate @results, :page_links => false %></center>
+</div>
+  </div>
 </div>

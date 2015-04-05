@@ -1,7 +1,11 @@
 <h3>Your availible options to review</h3>
-<% @restaurant.each do |x|%>
-  <p><%= link_to "#{x.name}", restaurant_path(x) %></p><p><%= x.distance_from([session[:latitude], session[:longitude]]).round(2) %> miles away.</p>
-<%end%>
+<div class="container">
+  <div class="row-fluid">
+    <% @restaurant.each do |x|%>
+    <p><%= link_to "#{x.name}", restaurant_path(x) %></p><p><%= x.distance_from([session[:latitude], session[:longitude]]).round(2) %> miles away.</p>
+    <%end%>
+  </div>
+</div>
 <div class='apple_pagination'>
-<center><%= will_paginate @restaurant %></center>
+  <center><%= will_paginate @restaurant %></center>
 </div>

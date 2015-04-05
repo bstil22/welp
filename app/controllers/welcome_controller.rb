@@ -13,7 +13,7 @@ class WelcomeController < ApplicationController
     if @restaurant.any?
       puts "************************we can review"
     else
-      flash[:notice] = "you are not within the required distance"
+      flash[:alert] = "You are currently not within the required distance to review."
     end
   end
     def search
