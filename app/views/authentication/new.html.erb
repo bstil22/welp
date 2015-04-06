@@ -18,8 +18,9 @@
 
     <%= label_tag :password, nil, class:"control-label" %>
     <%= password_field_tag :password, nil, class:"form-control" %><br>
-
-    <%= submit_tag "Sign In", class:"btn btn--m btn--gray btn--full" %>
+    <center><%= submit_tag "Sign In", id: "form-button", class:"btn btn--gray btn--full" %></center>
+    <center><%= link_to "Create an Account", signup_path, class: "btn btn--gray btn--full" %></center>
+      </div>
     <% end %>
     </div>
   </div>

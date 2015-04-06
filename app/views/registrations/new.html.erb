@@ -1,4 +1,4 @@
-<%= form_for @user,html:{class:"form-horizontal"}, url: signup_path do |f| %>
+<%= form_for @user,html:{class:"form-horizontal"},url: signup_path do |f| %>
 
 <div class="col-sm-offset-3">
 <div class="col-sm-8">
@@ -43,9 +43,9 @@
       </div>
 
       <div class="form-group ">
-        <%= f.submit 'Sign Up', class:"btn btn--m btn--gray btn--full" %>
+        <center><%= f.submit 'Sign Up', class:"btn btn--m btn--gray btn--full" %></center>
       </div>
     </div>
   </div>
-  
+
   <% end %>

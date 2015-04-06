@@ -18,5 +18,12 @@
   <dd><%= @user.created_at.strftime("%B %d, %Y") %></dd>
 
 </dl>
+
+<% @user.reviews.each do |review| %>
+  <p><%= review.restaurant.name.titlecase %></p>
+  <p><%= review.title.titlecase %></p>
+  <p><%= review.body %></p>
+  <p>Rating: <%= review.rating %></p>
+<% end %>
 </div>
 </div>

@@ -5,14 +5,6 @@ $( document ).ready(function() {
   }, 10000);
 });
 function geoFindMe() {
-  $( "#target" ).click(function() {
-    console.log("im called")
-    window.location.href = "/results";
-  });
-  $(".submit-btn").click(function(event) {
-  event.preventDefault();
-  $("user-form").submit();
-});
   var output = document.getElementById("out");
 
   if (!navigator.geolocation){
@@ -43,7 +35,7 @@ function finder(latitude, longitude) {
   console.log(longitude)
   $.ajax({
     url: "/location",
-    data: { latitude: latitude, longitude: longitude }        
+    data: { latitude: latitude, longitude: longitude }
   }).done(function(data) {
     console.log('way to go')
   }).fail(function(textStatus ) {

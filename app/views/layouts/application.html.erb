@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>   
+<body>
       <nav class="navbar navbar-default" role="navigation">
        <div class="container-fluid">
   <!-- Brand and toggle get grouped for better mobile display -->
@@ -34,7 +34,7 @@
         </form>
     </div>
     <ul class="nav navbar-nav navbar-right">
-      <li><a id='target' href="#">Write a Review</a></li>
+      <li><a id='target' href="/results">Write a Review</a></li>
       <% if current_user %>
             <li class"active"><%= link_to "#{current_user.first_name} ""#{current_user.last_name}", user_path(current_user.id) %></li>
             <li class"active"><%= link_to "Sign Out", signout_path, id:"signout-action" %></li>

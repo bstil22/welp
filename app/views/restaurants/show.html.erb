@@ -1,8 +1,10 @@
 <h1><%= @restaurant.name.titlecase %></h1>
 
-<h4><%= @restaurant.address %></h4>
+<h4><%= @restaurant.address.titlecase %></h4>
+<h4><%= @restaurant.phone_number %></h4>
 <h4>Rating:  <%= @restaurant.reviews.collect(&:rating).sum.to_f/@restaurant.reviews.length if @restaurant.reviews.length > 0 %></h4>
-<%= link_to "write a review", new_restaurant_review_path(@restaurant) %>
+<%= link_to "Write a Review", new_restaurant_review_path(@restaurant) %>
+<iframe width="300" height="300" frameborder="0" style="border:2" src='https://www.google.com/maps/embed/v1/place?key=AIzaSyDytygS-_zc6BXfut5sJW0hx7C-DNaKoqY&q=<%=@restaurant.address%>'/></iframe>
 
 <% @restaurant.reviews.each do |review| %>
   <h3><%= review.user.first_name.titlecase %>'s take on <%= @restaurant.name.titlecase %></h3>

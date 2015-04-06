@@ -1,3 +1,7 @@
+#form-button{
+  margin-bottom: 0.3em;
+}
+
 .btn, .btn:link, .btn:visited {
   border-radius: 0.3em;
   border-style: solid;
@@ -25,9 +29,9 @@
   -webkit-transition: background-color 0.3s, color 0.3s, border 0.3s;
   transition: background-color 0.3s, color 0.3s, border 0.3s; }
 
-/* 
-  Sizes 
-  
+/*
+  Sizes
+
   Small  = .btn--s
   Medium = .btn--m
   Large  = .btn--l
@@ -46,8 +50,8 @@
   font-size: 20px;
   border-radius: 0.25em !important; }
 
-/* 
-  Layout utility for responsive buttons 
+/*
+  Layout utility for responsive buttons
   Code:
   <a href="#" class="btn btn--full">
 */
