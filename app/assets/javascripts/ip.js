@@ -17,7 +17,7 @@ function geoFindMe() {
     var longitude = position.coords.longitude;
     finder(latitude, longitude);
 
-    output.innerHTML = '<p>Your current location is ' + latitude + '°, ' + longitude + '°</p>';
+    output.innerHTML = '<center><p id="pad">Your current location is ' + latitude + '°, ' + longitude + '°</p></center>';
 
   };
 
@@ -25,7 +25,7 @@ function geoFindMe() {
     output.innerHTML = "Unable to retrieve your location";
   };
 
-  output.innerHTML = "<p>Locating…</p>";
+  output.innerHTML = "<center><p>Locating…</p></center>";
 
   navigator.geolocation.getCurrentPosition(success, error);
 }

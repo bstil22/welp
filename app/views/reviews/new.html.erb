@@ -1,20 +1,17 @@
-<%= @restaurant.name %>
+<h2>Review of <%= @restaurant.name.titlecase %></h2>
 <%= form_for [@restaurant, @review] do |form| %>
 
 <%= form.label :title, 'Title' %>
 <%= form.text_field :title %>
 
-<br>
-<hr>
-
 <%= form.label :body, 'Review' %>
 <%= form.text_area :body %>
 
-<br>
-<hr>
 
 <%= form.label :rating, 'Rating' %>
 <%= form.select :rating, options_for_select([['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5]]) %>
+
+<%= form.file_field :photo %>
 
 <%= form.submit 'submit' %>
 

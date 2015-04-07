@@ -14,7 +14,7 @@ class ReviewsController < ApplicationController
 
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
-    @review = Review.new(params[:review].permit(:title, :body, :rating))
+    @review = Review.new(review_params)
 
     @review.restaurant = @restaurant
     @review.user = current_user
@@ -33,7 +33,7 @@ class ReviewsController < ApplicationController
   def update
     @restaurant = Restaurant.find(params[:restaurant_id])
     @reviews = @restaurant.reviews.find(params[:id])
-    @reviews.update(params[:review].permit(:title, :body, :rating))
+    @reviews.update(review_params)
 
     redirect_to restaurant_path(@restaurant)
   end
@@ -44,23 +44,20 @@ class ReviewsController < ApplicationController
     @reviews.destroy
     redirect_to restaurant_path(@restaurant)
   end
-
-  def auth
+    def auth
     @restaurant = Restaurant.find(params[:restaurant_id])
-    10.times do
-    puts @restaurant
-  end
     if Restaurant.near([session[:latitude], session[:longitude]], 0.25).include?(@restaurant)
       puts "nice you can review this"
     else
     redirect_to root_path, alert: "You are currently not within the required distance to review."
     end
   end
+
 private
 
   def review_params
     params.require(:review).permit(
-    :title, :body, :rating, :restaurant_id, :user_id)
+    :title, :body, :rating, :restaurant_id, :user_id, :photo)
   end
 
 end

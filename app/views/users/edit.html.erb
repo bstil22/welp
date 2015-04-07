@@ -42,6 +42,10 @@
         <%= f.password_field :password_confirmation, class: "form-control" %>
       </div>
 
+       <div class="form-group">
+       <%= f.file_field :photo %>
+      </div>
+
       <div class="form-group ">
         <center><%= f.submit 'Update', id: "form-button", class:"btn btn--black btn--full" %></center>
         <%= link_to "Cancel", root_path, class: "btn btn--m btn--gray btn--full" %>

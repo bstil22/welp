@@ -5,7 +5,7 @@ class RegistrationsController < ApplicationController
   end
 
   def create
-    @user = User.new(params.require(:user).permit(:email, :first_name, :last_name, :password, :password_confirmation))
+    @user = User.new(params.require(:user).permit(:email, :first_name, :last_name, :password, :password_confirmation, :photo))
     if @user.save
       session[:user_id] = @user.id
       redirect_to root_path

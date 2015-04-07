@@ -4,6 +4,9 @@
 <div class="page-header">
 <%= link_to "Edit Account", edit_user_path(@user), class: "btn pull-right" %><h1><%= "#{@user.first_name} #{@user.last_name}"%></h1>
 </div>
+
+<%= image_tag @user.photo.url(:medium) %>
+
 <dl class="dl-horizontal">
   <dt>First Name:</dt>
   <dd><%= @user.first_name %></dd>

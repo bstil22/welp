@@ -1,7 +1,7 @@
 <%= form_for @user,html:{class:"form-horizontal"},url: signup_path do |f| %>
 
 <div class="col-sm-offset-3">
-<div class="col-sm-8">
+  <div class="col-sm-8">
     <div class="well">
       <div class="text-center">
         <h1>Sign Up for Welp!</h1>
@@ -40,6 +40,9 @@
       <div class="form-group">
         <%= f.label :password_confirmation, class: "control-label" %>
         <%= f.password_field :password_confirmation, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.file_field :photo %>
       </div>
 
       <div class="form-group ">
