@@ -44,3 +44,23 @@
     height: 1%; }
   *:first-child + html .digg_pagination {
     overflow: hidden; }
+
+
+  #form   {
+  width:92%;
+  background:#fff;
+  margin-bottom:4%;
+  border:1px solid #ccc;
+  padding:4%;
+  font-family:'Open Sans',sans-serif;
+  font-size:95%;
+  color:#555;
+  padding:6% 4%;
+}
+#login {width:400px;
+  margin:0 auto;
+  margin-top:8px;
+  margin-bottom:2%;
+  transition:opacity 1s;
+  -webkit-transition:opacity 1s;
+}
