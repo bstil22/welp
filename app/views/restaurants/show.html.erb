@@ -7,16 +7,16 @@
 <% else %>
 <h4>Rating: Be the first to review!</h4>
 <%end%>
-<div>
-<iframe width="300" height="300" frameborder="0" style="border:2" src='https://www.google.com/maps/embed/v1/place?key=AIzaSyDytygS-_zc6BXfut5sJW0hx7C-DNaKoqY&q=<%=@restaurant.address%>'/></iframe>
-</div>
-<%= link_to "Write a Review", new_restaurant_review_path(@restaurant), class: "btn btn--full pull-left" %>
-<div class="table">
+<iframe width="300" height="300" frameborder="0" style="border:2" id='img' src='https://www.google.com/maps/embed/v1/place?key=AIzaSyDytygS-_zc6BXfut5sJW0hx7C-DNaKoqY&q=<%=@restaurant.address%>'/></iframe>
+<%= link_to "Write a Review", new_restaurant_review_path(@restaurant), id: 'img', class: "btn btn--full pull-left form" %><!-- <br><br><br> -->
 <% @restaurant.reviews.each do |review| %>
+  <div class='well pull-left'>
   <h3><%= review.user.first_name.titlecase %>'s take on <%= @restaurant.name.titlecase %></h3>
   <p><%= review.title.titlecase %></p>
   <p><%= review.body %></p>
   <p>Rating: <%= review.rating %></p>
-  <%= image_tag review.photo.url(:medium) %>
+  <% if review.photo_file_name != nil  %>
+  <%= image_tag review.photo.url(:medium), id: 'img' %>
+  </div>
+  <%end%>
 <% end %>
-</div>
