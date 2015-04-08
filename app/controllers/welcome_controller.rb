@@ -2,7 +2,8 @@ class WelcomeController < ApplicationController
   def index
     @user = User.find_by(id: session[:user_id])
   end
-  def location
+
+  def coordinates
     session[:latitude] = params[:latitude]
     session[:longitude] = params[:longitude]
     render nothing: true, status: 200

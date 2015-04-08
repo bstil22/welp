@@ -34,7 +34,7 @@ function finder(latitude, longitude) {
   console.log(latitude)
   console.log(longitude)
   $.ajax({
-    url: "/location",
+    url: "/coordinates",
     data: { latitude: latitude, longitude: longitude }
   }).done(function(data) {
     console.log('way to go')

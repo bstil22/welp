@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
   
   root  'welcome#index'
-  get '/location' => 'welcome#location'
+  get '/coordinates' => 'welcome#coordinates'
   get '/results' => 'welcome#results'
   get '/search' => 'welcome#search'
 end
