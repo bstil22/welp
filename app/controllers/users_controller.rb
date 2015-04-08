@@ -44,7 +44,7 @@ class UsersController < ApplicationController
   end
 
   def is_same_user
-    if current_user.id != params[:id]
+    if current_user.id != params[:id].to_i
       flash[:alert] = "You cannot modify another user's account"
       redirect_to user_path(params[:id])
     end

@@ -2,12 +2,10 @@
   <div class="row-fluid">
     <% @results.each do |result| %>
     <span id='inline'>
-    <h4><%= link_to "#{result.name.titlecase}", restaurant_path(result) %>&nbsp;</h4>
-    <% if result.latitude != nil %>
-    <h6> <%= result.distance_from([session[:latitude], session[:longitude]]).round(2) %> miles away.</h6>
+    <h4><%= link_to "#{result.name.titlecase}", restaurant_path(result) %>  <%= result.distance_from([session[:latitude], session[:longitude]]).round(2) %> miles away
+    (<%= result.category unless result.category == nil %>)  </h4>
     </span>
     </br>
-    <%end%>
     <%end%>
 <div class="digg_pagination">
   <center><%= will_paginate @results, :page_links => false %></center>
