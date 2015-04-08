@@ -42,7 +42,7 @@ Rails.application.configure do
     :storage => :s3,
     :s3_host_name =>  's3-us-west-1.amazonaws.com',
     :s3_credentials => {
-      :bucket => 'welp-images',
+      :bucket => 'dev-welp-images',
       :access_key_id => ENV['AWSKEY'],
       :secret_access_key => ENV['AWSKEYSEC']
     }
