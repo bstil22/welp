@@ -1,12 +1,7 @@
 class ReviewsController < ApplicationController
-    before_action :authenticate_visitor!, :auth, only: [:new, :create]
-    before_action do
-      if Restaurant.near([session[:latitude], session[:longitude]], 0.25).include?(@restaurant)
-        puts "nice you can review this"
-      else
-      redirect_to root_path, alert: "You are currently not within the required distance to review."
-    end
-  end
+  before_action :authenticate_visitor!
+  before_action :can_review, only: [:new, :create]
+
   def new
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review = @restaurant.reviews.new
@@ -44,12 +39,13 @@ class ReviewsController < ApplicationController
     @reviews.destroy
     redirect_to restaurant_path(@restaurant)
   end
-    def auth
+
+  def can_review
     @restaurant = Restaurant.find(params[:restaurant_id])
     if Restaurant.near([session[:latitude], session[:longitude]], 0.25).include?(@restaurant)
       puts "nice you can review this"
     else
-    redirect_to root_path, alert: "You are currently not within the required distance to review."
+      redirect_to root_path, alert: "You are currently not within the required distance to review."
     end
   end
 
