@@ -1,6 +1,10 @@
 class WelcomeController < ApplicationController
   def index
-    @user = User.find_by(id: session[:user_id])
+    if current_user
+      redirect_to results_path
+    else
+      redirect_to signin_path
+    end
   end
 
   def coordinates
