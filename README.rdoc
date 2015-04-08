@@ -1,28 +1,7 @@
-== README
+Welp is a yelp-like application, that allows users to review restaurants, based on where they are currently located. At the moment, a user must be within a quarter mile of the restaurant they wish to review. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Welp is optimized for mobile, as the core idea of the app is for users to review the establishment immediately following the conclusion of their dining experience. 
 
-Things you may want to cover:
+Welp utilizes Rails, jQuery, Postgres, Elasticsearch, and the Yelp and Google geolocation API's.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+A live version of the site can be found at:  https://welp-app.herokuapp.com/
