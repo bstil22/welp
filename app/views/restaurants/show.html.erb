@@ -17,6 +17,6 @@
   <p>Rating: <%= review.rating %></p>
   <% if review.photo_file_name != nil  %>
   <%= image_tag review.photo.url(:medium), id: 'img' %>
-  </div>
   <%end%>
+  </div>
 <% end %>
