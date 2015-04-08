@@ -1,5 +1,4 @@
 class RegistrationsController < ApplicationController
-
   def new
     @user = User.new
   end
@@ -13,5 +12,4 @@ class RegistrationsController < ApplicationController
       render :new
     end
   end
-
 end

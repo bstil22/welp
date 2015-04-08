@@ -7,6 +7,7 @@ class WelcomeController < ApplicationController
     session[:longitude] = params[:longitude]
     render nothing: true, status: 200
   end
+
   def results
     @location = [session[:latitude], session[:longitude]]
     @restaurant = Restaurant.near([session[:latitude], session[:longitude]], 0.25, :order => 'distance asc').paginate(:page => params[:page], :per_page => 10)
@@ -14,6 +15,7 @@ class WelcomeController < ApplicationController
       flash[:alert] = "You are currently not within the required distance to review."
     end
   end
+
   def search
     if params[:search].present?
       @results = Restaurant.search(params[:search], fields: [:name], page: params[:page], :per_page => 10)
@@ -23,5 +25,5 @@ class WelcomeController < ApplicationController
     else
       @results = Restaurant.all.paginate(:page => params[:page], :per_page => 10)
     end
-    end
   end
+end
