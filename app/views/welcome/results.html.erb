@@ -3,7 +3,8 @@
   <div class="row-fluid">
     <div class="well">
       <% @restaurant.each do |x|%>
-      <p><%= link_to "#{x.name.titlecase}", restaurant_path(x) %></p><p><%= x.distance_from([session[:latitude], session[:longitude]]).round(2) %> miles away.</p>
+      <h4><%= link_to "#{x.name.titlecase}", restaurant_path(x) %>  <%= x.distance_from([session[:latitude], session[:longitude]]).round(2) %> miles away
+    (<%= x.category unless x.category == nil %>)  </h4>
       <%end%>
     </div>
   </div>
