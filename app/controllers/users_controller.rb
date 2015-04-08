@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user!, only: [:update, :destroy]
+  before_action :authenticate_visitor!, :is_same_user, only: [:update, :destroy]
 
   def new
     @user= User.new
@@ -41,5 +41,12 @@ class UsersController < ApplicationController
       :password_confirmation,
       :photo
     )
+  end
+
+  def is_same_user
+    if current_user.id != params[:id]
+      flash[:alert] = "You cannot modify another user's account"
+      redirect_to user_path(params[:id])
+    end
   end
 end
