@@ -3,7 +3,7 @@
 <h4><%= @restaurant.address.titlecase %></h4>
 <h4><a href="tel:<%=@restaurant.phone_number%>"><%= @restaurant.phone_number %></a></h4>
 <% if @restaurant.reviews.length > 0 %>
-<h4>Rating:  <%= @restaurant.reviews.collect(&:rating).sum.to_f/@restaurant.reviews.length if @restaurant.reviews.length > 0 %>/5</h4>
+<h4>Rating: <%= (@restaurant.reviews.collect(&:rating).sum.to_f/@restaurant.reviews.length).round(2) %>/5</h4>
 <% else %>
 <h4>Rating: Be the first to review!</h4>
 <%end%>
