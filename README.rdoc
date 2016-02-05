@@ -4,4 +4,6 @@ Welp is optimized for mobile, as the core idea of the app is for users to review
 
 Welp utilizes Rails, jQuery, Postgres, Elasticsearch, and the Yelp and Google geolocation API's.
 
+Currently, only works in SF.
+
 A live version of the site can be found at:  https://welp-app.herokuapp.com/
