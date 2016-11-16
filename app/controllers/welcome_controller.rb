@@ -24,9 +24,6 @@ class WelcomeController < ApplicationController
   def search
     if params[:search].present?
       @results = Restaurant.search(params[:search], fields: [:name], page: params[:page], :per_page => 10)
-      # @results.each do |x|
-      #   x.yelp_call
-      # end
     else
       @results = Restaurant.all.paginate(:page => params[:page], :per_page => 10)
     end
